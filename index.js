@@ -24,10 +24,13 @@ soundBtn.addEventListener("change", function() {
 })
 
 
-
-
 function getMinutes() {
     let min = Number(minInput.value);
+    if(minInput.value < 1 || minInput.value % 1 !== 0) {
+        alert('Tempo inválido! Digite apenas os minutos (exemplo: 25)');
+        modal.style.display = 'flex';
+        minInput.value = '';
+    }
     minEl.innerHTML = min.toString().padStart(2, '0');
     secondEl.innerHTML = "00";
 }
