@@ -19,7 +19,7 @@ soundBtn.addEventListener("change", function() {
     if(soundBtn.checked) {
         audio.volume = 0;
     } else {
-        audio.volume = 0.3;
+        audio.volume = 0.2;
     }
 })
 
@@ -63,10 +63,18 @@ setConfig.addEventListener('click', () => {
 })
 
 configBtn.addEventListener('click', () => {
+    if(minInput.value === '') {
+        alert('Insira os minutos que deseja focar.')
+        modal.style.display = 'flex';
+    } else {
     modal.style.display = 'none';
+    }
 })
 
-pauseBtn.addEventListener('click', () => clearTimeout(timer));
+pauseBtn.addEventListener('click', () => {
+    clearTimeout(timer);
+    startBtn.style.display = 'inline-block';
+});
 startBtn.addEventListener('click', () => {
     startBtn.style.display = 'none';
     decreaseTime();

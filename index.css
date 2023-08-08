@@ -136,6 +136,12 @@ input[type="checkbox"] {
     border: .2rem solid var(--tt-border-dark);
 }
 
+.dark .modal {
+    border: .1rem solid var(--tt-border-dark);
+    background-color: var(--tt-button-bg-dark);
+}
+
+
 .dark #start-button,
 .dark #pause-button,
 .dark #config-button {
