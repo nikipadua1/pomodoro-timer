@@ -1,0 +1,224 @@
+:root {
+    font-size: 62.5%;
+
+    --tt-background-light: #EEE9F8;
+    --tt-button-bg-light: #F9F7F3;
+    --tt-border-light: #5896F0;
+    --tt-button-border-hover: #347ff0;
+    --tt-button-bg-hover: #e7e7e7;
+    --tt-container-light: rgba(255, 255, 255, 0.651);
+    --tt-background-element: rgba(0, 0, 0, 0.8);
+    --tt-font-light: black;
+
+    --tt-background-dark: #11022e;
+    --tt-font-color: #FFF;
+    --tt-border-dark: #d61faf;
+    --tt-font-dark: rgba(54, 54, 54, 0.774);
+    --tt-button-bg-dark: #f7d4f5;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--tt-background-light);
+    position: relative;
+}
+.dark-mode {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+}
+.container {
+    background-color: var(--tt-container-light);
+    border: .2rem solid var(--tt-border-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50rem;
+    max-width: 90%;
+    position: relative;
+    padding: 3rem;
+}
+
+.config {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+}
+
+.config img{
+    width: 2rem;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#minutes, 
+#space-timer,
+#seconds {
+    font-size: clamp(7rem, 10rem - 1vh, 12rem);
+    font-weight: bold;
+}
+
+.buttons {
+    margin-top: 2rem;
+}
+
+#start-button,
+#pause-button,
+#config-button {
+    padding: 1rem 2rem;
+    background-color: var(--tt-button-bg-light);
+    border: .1rem solid var(--tt-border-light);
+    font-size: 2rem;
+    color: var(--tt-border-light);
+    cursor: pointer;
+    margin-left: 2rem;
+    transition: 0.3s;
+}
+
+#start-button:hover,
+#pause-button:hover,
+#config-button:hover {
+    background-color: var(--tt-button-bg-hover);
+    border: .1rem solid var(--tt-button-border-hover);
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+
+.bi {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.sun {
+    display: none;
+    cursor: pointer;
+}
+
+.moon {
+    display:block;
+}
+
+/* Dark Mode */
+
+.dark {
+    background-color: var(--tt-background-dark);
+    color: var(--tt-font-color);
+}
+
+.dark .dark-mode .sun {
+    display: block;
+}
+
+.dark .dark-mode .moon {
+    display: none;
+}
+
+.dark .container {
+    border: .2rem solid var(--tt-border-dark);
+}
+
+.dark #start-button,
+.dark #pause-button,
+.dark #config-button {
+    background-color: var(--tt-button-bg-dark);
+    border: .1rem solid var(--tt-border-dark);
+    color: var(--tt-font-dark);
+}
+
+.dark #start-button:hover,
+.dark #pause-button:hover,
+.dark #config-button:hover {
+    background-color: var(--tt-button-bg-hover);
+    border: .1rem solid var(--tt-border-dark);
+}
+
+/* Modal */
+
+.config-modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: var(--tt-background-element);
+    inset: 0;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    width: 50rem;
+    max-width: 90%;
+    align-items: center;
+    padding: 3rem;
+    border: .1rem solid var(--tt-border-light);
+    background-color: var(--tt-background-light);
+    color: var(--tt-font-light);
+}
+
+form label {
+    font-size: 1.6rem;
+    display: block;
+    text-align: center;
+}
+
+input[type="number"]{
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#config-button {
+    margin-top: 2rem;
+}
+
+.sound-change {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+}
+
+.bi-volume-mute-fill {
+    display: none;
+}
+
+.mute .bi-volume-up-fill {
+    display: block;
+}
+
+.mute .bi-volume-mute-fill {
+    display: block;
+}
+
+.mute .bi-volume-up-fill {
+    display: none;
+}
+
