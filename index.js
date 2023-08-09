@@ -11,7 +11,7 @@ let min;
 let timer;
 let darkBtn = document.querySelector('#change-theme');
 let soundBtn = document.querySelector('#sound');
-const audio = new Audio('/assets/alarmsound.mp3');
+const audio = new Audio('https://github.com/nikipadua1/pomodoro-timer/raw/main/assets/alarmsound.mp3');
 
 //Sound
 soundBtn.addEventListener("change", function() {
